@@ -27,6 +27,7 @@ jobs:
   microsoft-stock:
     name: Microsoft (MSFT) Stock Price
     runs-on: ubuntu-latest
+    needs: alphabet-stock
     permissions:
       contents: write
     steps:
@@ -42,6 +43,7 @@ jobs:
   meta-stock:
     name: Meta (META) Stock Price
     runs-on: ubuntu-latest
+    needs: microsoft-stock
     permissions:
       contents: write
     steps:
@@ -57,6 +59,7 @@ jobs:
   amazon-stock:
     name: Amazon (AMZN) Stock Price
     runs-on: ubuntu-latest
+    needs: meta-stock
     permissions:
       contents: write
     steps:
@@ -72,6 +75,7 @@ jobs:
   oracle-stock:
     name: Oracle (ORCL) Stock Price
     runs-on: ubuntu-latest
+    needs: amazon-stock
     permissions:
       contents: write
     steps:
@@ -87,6 +91,7 @@ jobs:
   nvidia-stock:
     name: Nvidia (NVDA) Stock Price
     runs-on: ubuntu-latest
+    needs: oracle-stock
     permissions:
       contents: write
     steps:
@@ -102,6 +107,7 @@ jobs:
   apple-stock:
     name: Apple (AAPL) Stock Price
     runs-on: ubuntu-latest
+    needs: nvidia-stock
     permissions:
       contents: write
     steps:
@@ -117,6 +123,7 @@ jobs:
   cloudflare-stock:
     name: Cloudflare (NET) Stock Price
     runs-on: ubuntu-latest
+    needs: apple-stock
     permissions:
       contents: write
     steps:
