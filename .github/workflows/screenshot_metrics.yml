@@ -1,0 +1,26 @@
+name: Website Screenshots
+
+on:
+  schedule:
+    - cron: "0 10 * * *" # Runs at 10 AM UTC daily
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  xkcd-daily:
+    name: XKCD of the day
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.xkcd.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_screenshot: yes
+          plugin_screenshot_title: "XKCD of the day"
+          plugin_screenshot_url: https://xkcd.com
+          plugin_screenshot_selector: "#comic img"
