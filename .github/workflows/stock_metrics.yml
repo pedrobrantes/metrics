@@ -2,13 +2,91 @@ name: Stock Price Metrics
 
 on:
   schedule:
-    - cron: "0 8 * * *" # Runs at 8 AM UTC daily
+    - cron: "0 8 * * *"
   workflow_dispatch:
   push:
     branches:
       - main
 
 jobs:
+  alphabet-stock:
+    name: Alphabet (GOOGL) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-googl.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: GOOGL
+
+  microsoft-stock:
+    name: Microsoft (MSFT) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-msft.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: MSFT
+
+  meta-stock:
+    name: Meta (META) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-meta.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: META
+
+  amazon-stock:
+    name: Amazon (AMZN) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-amzn.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: AMZN
+
+  oracle-stock:
+    name: Oracle (ORCL) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-orcl.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: ORCL
+
+  nvidia-stock:
+    name: Nvidia (NVDA) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-nvda.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: NVDA
+
   apple-stock:
     name: Apple (AAPL) Stock Price
     runs-on: ubuntu-latest
@@ -21,3 +99,16 @@ jobs:
           plugin_stock: yes
           plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
           plugin_stock_symbol: AAPL
+
+  cloudflare-stock:
+    name: Cloudflare (NET) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-net.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: NET
