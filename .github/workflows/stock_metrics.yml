@@ -1,0 +1,23 @@
+name: Stock Price Metrics
+
+on:
+  schedule:
+    - cron: "0 8 * * *" # Runs at 8 AM UTC daily
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  apple-stock:
+    name: Apple (AAPL) Stock Price
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: stock-price-aapl.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_stock: yes
+          plugin_stock_token: ${{ secrets.STOCK_TOKEN }}
+          plugin_stock_symbol: AAPL
