@@ -12,6 +12,8 @@ jobs:
   alphabet-stock:
     name: Alphabet (GOOGL) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -25,6 +27,8 @@ jobs:
   microsoft-stock:
     name: Microsoft (MSFT) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -38,6 +42,8 @@ jobs:
   meta-stock:
     name: Meta (META) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -51,6 +57,8 @@ jobs:
   amazon-stock:
     name: Amazon (AMZN) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -64,6 +72,8 @@ jobs:
   oracle-stock:
     name: Oracle (ORCL) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -77,6 +87,8 @@ jobs:
   nvidia-stock:
     name: Nvidia (NVDA) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -90,6 +102,8 @@ jobs:
   apple-stock:
     name: Apple (AAPL) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
@@ -103,6 +117,8 @@ jobs:
   cloudflare-stock:
     name: Cloudflare (NET) Stock Price
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: lowlighter/metrics@latest
         with:
